@@ -5,8 +5,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaLoja01.Controllers
 {
-    public class ProdutosController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProdutosController : ControllerBase
     {
+        private readonly IProdutoAppService _produtoAppService;
+
+        public ProdutosController(IProdutoAppService produtoAppService)
+        {
+            _produtoAppService = produtoAppService;
+        }
+
         [HttpPost("ResgistrarProduto")]
         public async Task<IActionResult> ResgistrarProduto(ProdutoCreateCommand command)
         {

@@ -1,6 +1,11 @@
+using SistemaLoja01.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+ApplicationConfig.AddApplicationConfig(builder);
+DomainConfg.AddDomainConfig(builder);
+RepositoryConfig.AddRepositoryConfig(builder);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

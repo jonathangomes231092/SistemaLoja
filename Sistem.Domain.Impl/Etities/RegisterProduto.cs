@@ -1,22 +1,23 @@
-﻿using FluentValidation.Results;
+﻿using Sistem.Domain.Impl.Validators;
 using Sistem.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using FluentValidation.Results;
+using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Sistem.Domain.Impl.Etities
 {
     public class RegisterProduto : IEntity
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
 
         //propriedades
-
         public string? Nome { get; set; }
         public string? Tipo { get; set; } // Melhorar pra um Enum
         public int Quantidade { get; set; }
@@ -25,7 +26,5 @@ namespace Sistem.Domain.Impl.Etities
 
         public ValidationResult validationResult
             => new ProdutoValidator().Validate(this);
-
-     
     }
 }

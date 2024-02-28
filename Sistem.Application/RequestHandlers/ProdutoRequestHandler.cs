@@ -1,11 +1,11 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Sistem.Application.Commands.ProdutosCommands;
 using Sistem.Application.Dtos;
 using Sistem.Domain.Impl.Etities;
 using Sistem.Domain.Impl.Interfaces;
-using System.ComponentModel.DataAnnotations;
+
 
 namespace Sistem.Application.RequestHandlers
 {
@@ -28,7 +28,7 @@ namespace Sistem.Application.RequestHandlers
             _mapper = mapper;
         }
 
-        public Task<ProdutoDto> Handle(ProdutoCreateCommand request, CancellationToken cancellationToken)
+        public async Task<ProdutoDto> Handle(ProdutoCreateCommand request, CancellationToken cancellationToken)
         {
             var client = _mapper.Map<RegisterProduto>(request);
 
@@ -41,7 +41,7 @@ namespace Sistem.Application.RequestHandlers
             return _mapper.Map<ProdutoDto>(client);
         }
 
-        public Task<ProdutoDto> Handle(ProdutoDeleteCommand request, CancellationToken cancellationToken)
+        public async Task<ProdutoDto> Handle(ProdutoDeleteCommand request, CancellationToken cancellationToken)
         {
             var client = await _produtoDomainService.GetByIdAsync(request.Id);
 
@@ -50,7 +50,7 @@ namespace Sistem.Application.RequestHandlers
             return _mapper.Map<ProdutoDto>(client);
         }
 
-        public Task<ProdutoDto> Handle(ProdutoUpdateCommand request, CancellationToken cancellationToken)
+        public async Task<ProdutoDto> Handle(ProdutoUpdateCommand request, CancellationToken cancellationToken)
         {
             // capiturando dados do cliente
             var client = _mapper.Map<RegisterProduto>(request);

@@ -5,7 +5,7 @@
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
-    public interface IDomainService<TEntity, TKey> : IDisposable // para destruir oque foi contruido por enjeção de dependencia
+    public interface IDomainService<TEntity, TKey> : IDisposable 
         where TEntity : class
     {
         Task CreateAsync(TEntity entity);
