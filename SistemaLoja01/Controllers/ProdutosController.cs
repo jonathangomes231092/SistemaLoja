@@ -21,8 +21,8 @@ namespace SistemaLoja01.Controllers
         {
             try
             {
-                var client = await _produtoAppService.Creat(command);
-                return StatusCode(201, client); //CRIANDO
+                var produto = await _produtoAppService.Creat(command);
+                return StatusCode(201, produto); //CRIANDO
             }
             catch (ValidationException ex)
             {
@@ -43,8 +43,8 @@ namespace SistemaLoja01.Controllers
         {
             try
             {
-                var client = await _produtoAppService.Update(command);
-                return StatusCode(200, client); //ok
+                var produto = await _produtoAppService.Update(command);
+                return StatusCode(200, produto); //ok
             }
             catch (ValidationException ex)
             {
@@ -67,8 +67,8 @@ namespace SistemaLoja01.Controllers
             {
                 var command = new ProdutoDeleteCommand { Id = id };
 
-                var client = await _produtoAppService.Delete(command);
-                return StatusCode(200, client); //ok
+                var produto = await _produtoAppService.Delete(command);
+                return StatusCode(200, produto); //ok
             }
             catch (ArgumentException ex)
             {

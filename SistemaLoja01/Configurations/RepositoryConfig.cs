@@ -14,6 +14,7 @@ namespace SistemaLoja01.Configurations
             var connectionString = builder.Configuration.GetConnectionString("BD_PRODUTO_LOJA");
             builder.Services.AddDbContext<SqlServerContext>
                 (options => options.UseSqlServer(connectionString));
+
         }
     }
 }
