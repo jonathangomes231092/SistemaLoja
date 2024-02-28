@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistem.Domain.Impl.Interfaces
 {
-    public interface IProdutoRepository : IDomainService<RegisterProduto, int>
+    public interface IProdutoRepository : IRepository<RegisterProduto, int>
     {
         RegisterProduto GetByTipo(string tipo);
         RegisterProduto GetByNome(string Nome);

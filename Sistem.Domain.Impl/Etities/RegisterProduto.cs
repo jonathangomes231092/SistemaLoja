@@ -1,8 +1,7 @@
 ﻿using Sistem.Domain.Impl.Validators;
 using Sistem.Domain.Interfaces;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using FluentValidation.Results;
+using System.ComponentModel.DataAnnotations.Schema;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Sistem.Domain.Impl.Etities

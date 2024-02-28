@@ -10,6 +10,7 @@ namespace Sistem.Domain.Impl.Services
         { 
             _unitOfWork = unitOfWork;
         }
+
         public async Task CreateAsync(RegisterProduto entity)
         {
             if (_unitOfWork.ProdutoRepository.GetByNome(entity.Nome) != null)
