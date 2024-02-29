@@ -6,18 +6,18 @@ namespace Sistem.Infra.Data.SqlServer.Contexts
 {
     public class SqlServerContext : DbContext
     {
-         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
          {
 
              optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-JB24SF0\MSSQLSERVER01;Initial Catalog=BD_PRODUTO_LOJA;Integrated Security=True");
-         }
+         }*/
 
         // construtor da superclasse (DbContext)
-      /*  public SqlServerContext(DbContextOptions<SqlServerContext> dbContextOptions)
+        public SqlServerContext(DbContextOptions<SqlServerContext> dbContextOptions)
                 : base(dbContextOptions)
         {
 
-        }*/
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
