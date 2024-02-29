@@ -11,7 +11,7 @@ namespace Sistem.Application.Mappings
             CreateMap<ProdutoCreateCommand, RegisterProduto>()
                 .AfterMap((Command, entity) =>
                 {
-                    entity.Id = 1;
+                 
                     entity.CreatedAt = DateTime.Now;
                     entity.UpdatedAt = DateTime.Now;
                 });

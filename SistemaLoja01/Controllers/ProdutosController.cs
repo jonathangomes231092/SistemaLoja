@@ -20,7 +20,7 @@ namespace SistemaLoja01.Controllers
         public async Task<IActionResult> ResgistrarProduto(ProdutoCreateCommand command)
         {
             try
-            {
+             {
                 var produto = await _produtoAppService.Creat(command);
                 return StatusCode(201, produto); //CRIANDO
             }

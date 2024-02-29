@@ -25,7 +25,20 @@ namespace Sistem.Infra.Data.SqlServer.Repository
         public async virtual Task CreateAsync(TEntity entity)
         {
             _sqlServerContext.Set<TEntity>().Add(entity);
-            await _sqlServerContext.SaveChangesAsync();
+            try
+            {
+                await _sqlServerContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                // Examine a exceção interna para obter mais detalhes
+                Console.WriteLine($"Erro ao salvar entidade: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Detalhes internos: {ex.InnerException.Message}");
+                }
+            }
+           // await _sqlServerContext.SaveChangesAsync();
         }
 
         public async virtual Task UpdateAsync(TEntity entity)

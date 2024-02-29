@@ -13,9 +13,9 @@ namespace Sistem.Domain.Impl.Validators
 
             RuleFor(x => x.Nome)
                 .NotEmpty()
-                .WithMessage("Nome obrigatório")
-                .Length(6, 150)
-                .WithMessage("Nome deve possuir de 6 a 150 caracteres");
+                .WithMessage("Nome obrigatório");
+                //.Length(6, 150)
+                //.WithMessage("Nome deve possuir de 6 a 150 caracteres");
 
             RuleFor(x => x.Quantidade)
                 .NotEmpty()
