@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace Sistem.Domain.Impl.Interfaces
 {
-    public interface IProdutoRepository : IRepository<RegisterProduto, int>
+    public interface IProdutoRepository : IRepository<RegisterProduto, Guid>
     {
         RegisterProduto GetByTipo(string tipo);
         RegisterProduto GetByNome(string Nome);
-      //  RegisterProduto GetByQuantidade(string Quantidade);
-      //  RegisterProduto GetByValor(string Valor);
+      
+        //  RegisterProduto GetByQuantidade(string Quantidade);
+        //  RegisterProduto GetByValor(string Valor);
     }
 }  

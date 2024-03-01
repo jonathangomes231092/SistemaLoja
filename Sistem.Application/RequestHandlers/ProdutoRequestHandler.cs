@@ -64,6 +64,7 @@ namespace Sistem.Application.RequestHandlers
             return _mapper.Map<ProdutoDto>(client);
         }
         public void Dispose()
+        
         {
             _produtoDomainService.Dispose();
         }

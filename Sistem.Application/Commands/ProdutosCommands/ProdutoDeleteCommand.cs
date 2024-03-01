@@ -10,6 +10,6 @@ namespace Sistem.Application.Commands.ProdutosCommands
 {
     public class ProdutoDeleteCommand : IRequest<ProdutoDto>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

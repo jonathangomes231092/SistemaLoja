@@ -13,7 +13,7 @@ namespace Sistem.Infra.Data.SqlServer.Contexts
          }*/
 
         // construtor da superclasse (DbContext)
-        public SqlServerContext(DbContextOptions<SqlServerContext> dbContextOptions)
+       public SqlServerContext(DbContextOptions<SqlServerContext> dbContextOptions)
                 : base(dbContextOptions)
         {
 

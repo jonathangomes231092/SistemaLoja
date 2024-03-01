@@ -12,7 +12,7 @@ using Sistem.Infra.Data.SqlServer.Contexts;
 namespace Sistem.Infra.Data.SqlServer.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20240222133818_Initial")]
+    [Migration("20240301131453_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,9 @@ namespace Sistem.Infra.Data.SqlServer.Migrations
 
             modelBuilder.Entity("Sistem.Domain.Impl.Etities.RegisterProduto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");

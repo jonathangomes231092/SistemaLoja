@@ -1,25 +1,16 @@
 ﻿using Sistem.Domain.Impl.Validators;
 using Sistem.Domain.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Sistem.Domain.Impl.Etities
 {
     public class RegisterProduto : IEntity
-    {
-        private static int lastId = 0;
-        public int Id { get; set; }
-
+    {    
+        public Guid Id { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-
-        public RegisterProduto()
-        {
-            // Incrementa o lastId e atribui à propriedade Id
-            Id = ++lastId;
-            CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
-        }
-
 
         //propriedades
         public string? Nome { get; set; }

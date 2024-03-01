@@ -5,7 +5,7 @@ using Sistem.Infra.Data.SqlServer.Contexts;
 
 namespace Sistem.Infra.Data.SqlServer.Repository
 {
-    public class ProdutoRepositoy : BaseRepository<RegisterProduto, int>, IProdutoRepository
+    public class ProdutoRepositoy : BaseRepository<RegisterProduto, Guid>, IProdutoRepository
     {
         private readonly SqlServerContext _sqlServerContext;
 

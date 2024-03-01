@@ -55,7 +55,7 @@ namespace Sistem.Domain.Impl.Services
             return await _unitOfWork.ProdutoRepository.GetAllAsync(page, limit);
         }
 
-        public async Task<RegisterProduto> GetByIdAsync(int id)
+        public async Task<RegisterProduto> GetByIdAsync(Guid id)
         {
             return await _unitOfWork.ProdutoRepository.GetByIdAsync(id);
         }

@@ -3,7 +3,7 @@ using Sistem.Domain.Interfaces;
 
 namespace Sistem.Domain.Impl.Interfaces
 {
-    public interface IProdutoDomainService : IDomainService<RegisterProduto, int>
+    public interface IProdutoDomainService : IDomainService<RegisterProduto, Guid>
     {
 
     }

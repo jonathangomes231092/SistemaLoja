@@ -61,7 +61,7 @@ namespace SistemaLoja01.Controllers
         }
 
         [HttpDelete("DeletarProduto/{id}")]
-        public async Task<IActionResult> DeleteProduto(int id)
+        public async Task<IActionResult> DeleteProduto(Guid id)
         {
             try
             {
