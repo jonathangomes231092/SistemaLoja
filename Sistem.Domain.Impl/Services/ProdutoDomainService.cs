@@ -25,7 +25,7 @@ namespace Sistem.Domain.Impl.Services
 
         public async Task UpdateAsync(RegisterProduto entity)
         {
-            if ( await _unitOfWork.ProdutoRepository.GetByIdAsync(entity.Id) != null)
+            if ( await _unitOfWork.ProdutoRepository.GetByIdAsync(entity.Id) == null)
                 throw new Exception("Produto não encontrado");
 
             var nomeProduto = _unitOfWork.ProdutoRepository.GetByNome(entity.Nome);

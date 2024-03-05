@@ -23,6 +23,7 @@ namespace Sistem.Infra.Data.SqlServer.Repository
 
         public RegisterProduto GetByTipo(string tipo)
          => _sqlServerContext.Produtos
+            .AsNoTracking()
             .FirstOrDefault(x => x.Tipo.Equals(tipo));
 
     }

@@ -57,7 +57,7 @@ namespace Sistem.Infra.Data.SqlServer.Repository
         => await _sqlServerContext.Set<TEntity>()
             .AsNoTracking()
             .Skip(page)
-            .Take(limit)
+            .Take(limit)       
             .ToListAsync();
 
         public async virtual Task<TEntity> GetByIdAsync(Tkey id)
