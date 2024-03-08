@@ -32,11 +32,12 @@ namespace Sistem.Domain.Impl.Services
             if (nomeProduto != null && nomeProduto.Id.Equals(entity.Id))
                 throw new Exception("Nome do Produto ja existente no sistema");
 
-            var nomeTipoProduto = _unitOfWork.ProdutoRepository.GetByTipo(entity.Tipo);
-            if (nomeTipoProduto != null && nomeTipoProduto.Id.Equals(entity.Id))
-                throw new Exception("Tipo de produto nao encontrado");
+            /*var nomeTipoProduto = _unitOfWork.ProdutoRepository.GetByTipo(entity.Tipo);
 
-           // await _unitOfWork.ProdutoRepository.UpdateAsync(entity);
+            if (nomeTipoProduto != null && nomeTipoProduto.Id.Equals(entity.Id))
+                throw new Exception("Tipo de produto nao encontrado");*/
+
+            await _unitOfWork.ProdutoRepository.UpdateAsync(entity);
         }
 
         public async Task DeleteAsync(RegisterProduto entity)
@@ -62,7 +63,7 @@ namespace Sistem.Domain.Impl.Services
 
         public void Dispose()
         {
-           // _unitOfWork.Dispose();
+            _unitOfWork.Dispose();
         }
     }
 }

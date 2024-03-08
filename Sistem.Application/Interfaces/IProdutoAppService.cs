@@ -8,5 +8,9 @@ namespace Sistem.Application.Interfaces
         Task<ProdutoDto> Creat(ProdutoCreateCommand command);
         Task<ProdutoDto> Delete(ProdutoDeleteCommand command);
         Task<ProdutoDto> Update(ProdutoUpdateCommand command);
+
+        List<ProdutoDto> GetAll(int page, int limit);
+        ProdutoDto GetById(Guid id);
+
     }
 }

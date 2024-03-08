@@ -1,6 +1,6 @@
-﻿namespace Sistem.Application.Dtos
+﻿namespace Sistem.Infra.Data.SqlServer.Models
 {
-    public class ProdutoDto
+    public class ProdutoModel
     {
         public Guid Id { get; set; }
         public string? Nome { get; set; }

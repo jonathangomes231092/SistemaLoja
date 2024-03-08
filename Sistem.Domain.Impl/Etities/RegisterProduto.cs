@@ -1,13 +1,11 @@
 ﻿using Sistem.Domain.Impl.Validators;
 using Sistem.Domain.Interfaces;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Sistem.Domain.Impl.Etities
 {
     public class RegisterProduto : IEntity
-    {    
+    {
         public Guid Id { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

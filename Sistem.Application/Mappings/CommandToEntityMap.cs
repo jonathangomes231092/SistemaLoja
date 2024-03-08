@@ -17,10 +17,10 @@ namespace Sistem.Application.Mappings
                 });
 
             CreateMap<ProdutoUpdateCommand, RegisterProduto>()
-              .AfterMap((Command, entity) =>
-              {
-                  entity.UpdatedAt = DateTime.Now;
-              });
+               .AfterMap((command, entity) =>
+               {
+                   entity.UpdatedAt = DateTime.Now;
+               });
         }
     }
 }

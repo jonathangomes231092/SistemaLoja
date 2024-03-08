@@ -9,6 +9,7 @@ namespace Sistem.Application.Services
     {
         private readonly IMediator _mediator;
 
+
         public ProdutoAppService(IMediator mediator)
         {
             _mediator = mediator;
@@ -32,6 +33,17 @@ namespace Sistem.Application.Services
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        public List<ProdutoDto> GetAll(int page, int limit)
+        {
+            return  GetAll(page, limit);
+        }
+
+        public ProdutoDto GetById(Guid id)
+        {
+            return GetById(id);
+
         }
     }
 }
